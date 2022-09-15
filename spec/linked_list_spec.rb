@@ -5,6 +5,9 @@ RSpec.describe LinkedList do
     @list = LinkedList.new
   end
 
+  it "exists" do
+    expect(@list).to be_a(LinkedList)
+  end
   it "can add a piece of data to a list" do
     expect(@list.head).to eq(nil)
     @list.append("doop")
