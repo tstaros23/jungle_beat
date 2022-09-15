@@ -26,7 +26,7 @@ class LinkedList
     else
       count = 1
       current_node = @head
-      while current_node.next_node != nil
+      while !current_node.next_node.nil?
         current_node = current_node.next
         count += 1
       end
