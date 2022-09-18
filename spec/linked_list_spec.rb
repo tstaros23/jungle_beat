@@ -8,7 +8,7 @@ RSpec.describe LinkedList do
   it "exists" do
     expect(@list).to be_a(LinkedList)
   end
-  it "can add a piece of data to a list" do
+  xit "can add a piece of data to a list" do
     expect(@list.head).to eq(nil)
     @list.append("doop")
     expect(@list.head.next_node).to eq(nil)
@@ -16,7 +16,7 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("doop")
   end
 
-  it "can add multiple pieces of data to a list" do
+  xit "can add multiple pieces of data to a list" do
     @list.append("doop")
     @list.append("deep")
     expect(@list.count).to eq(2)
@@ -27,6 +27,7 @@ RSpec.describe LinkedList do
     @list.append("plop")
     expect(@list.to_string).to eq("plop")
     @list.append("suu")
+    expect(@list.to_string).to eq("plop suu")
     @list.prepend("dop")
     expect(@list.to_string).to eq("dop plop suu")
     expect(@list.count).to eq(3)

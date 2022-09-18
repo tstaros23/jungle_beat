@@ -35,10 +35,22 @@ class LinkedList
   end
 
   def to_string
-    if !head.next_node.nil?
+    if head.next_node.nil?
+      head.data
+    elsif head.next_node.next_node.nil?
       head.data + (" #{head.next_node.data}")
     else
-      head.data
+      head.data + (" #{head.next_node.next_node.data}")
+    end
+  end
+
+  def prepend(data)
+    if self.head.nil?
+      @head = Node.new(data)
+    else
+      current_head = Node.new(data)
+      current_head.next_node = @head
+      @head = current_head
     end
   end
 end
