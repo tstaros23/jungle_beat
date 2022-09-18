@@ -15,4 +15,11 @@ RSpec.describe LinkedList do
     expect(@list.count).to eq(1)
     expect(@list.to_string).to eq("doop")
   end
+
+  it "can add multiple pieces of data to a list" do
+    @list.append("doop")
+    @list.append("deep")
+    expect(@list.count).to eq(2)
+    expect(@list.to_string).to eq("doop deep")
+  end
 end

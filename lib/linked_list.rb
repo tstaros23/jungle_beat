@@ -27,7 +27,7 @@ class LinkedList
       count = 1
       current_node = @head
       while !current_node.next_node.nil?
-        current_node = current_node.next
+        current_node = current_node.next_node
         count += 1
       end
       count
@@ -35,6 +35,10 @@ class LinkedList
   end
 
   def to_string
-    head.data
+    if !head.next_node.nil?
+      head.data + (" #{head.next_node.data}")
+    else
+      head.data
+    end
   end
 end
