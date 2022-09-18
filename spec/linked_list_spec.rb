@@ -22,4 +22,13 @@ RSpec.describe LinkedList do
     expect(@list.count).to eq(2)
     expect(@list.to_string).to eq("doop deep")
   end
+
+  it "can prepend nodes to the beginning of the list" do
+    @list.append("plop")
+    expect(@list.to_string).to eq("plop")
+    @list.append("suu")
+    @list.prepend("dop")
+    expect(@list.to_string).to eq("dop plop suu")
+    expect(@list.count).to eq(3)
+  end
 end
