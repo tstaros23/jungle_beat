@@ -35,13 +35,27 @@ class LinkedList
   end
 
   def to_string
-    if head.next_node.nil?
-      head.data
-    elsif head.next_node.next_node.nil?
-      head.data + (" #{head.next_node.data}")
+    current_node = @head
+    string_array = []
+    if current_node.next_node.nil?
+      @head.data
     else
-      head.data + (" #{head.next_node.next_node.data}")
+      while !current_node.next_node.nil?
+        string_array << current_node.data
+        if !current_node.next_node.next_node.nil?
+          
+        # current_node = current_node.next_node
+        require "pry"; binding.pry
+      end
+      return string_array
     end
+    # if !head.next_node.nil? && !head.next_node.next_node.nil?
+    #   head.data + (" #{head.next_node.data} #{head.next_node.next_node.data}")
+    # elsif !head.next_node.nil? && head.next_node.next_node.nil?
+    #   head.data + (" #{head.next_node.data}")
+    # else
+    #   head.data
+    # end
   end
 
   def prepend(data)
@@ -53,4 +67,8 @@ class LinkedList
       @head = current_head
     end
   end
+
+  # def insert(position, data)
+  #
+  # end
 end

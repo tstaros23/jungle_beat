@@ -5,7 +5,7 @@ RSpec.describe LinkedList do
     @list = LinkedList.new
   end
 
-  it "exists" do
+  xit "exists" do
     expect(@list).to be_a(LinkedList)
   end
   xit "can add a piece of data to a list" do
