@@ -35,27 +35,19 @@ class LinkedList
   end
 
   def to_string
+    array = []
     current_node = @head
-    string_array = []
-    if current_node.next_node.nil?
-      @head.data
+
+    if self.head.nil?
+      return array
     else
-      while !current_node.next_node.nil?
-        string_array << current_node.data
-        if !current_node.next_node.next_node.nil?
-          
-        # current_node = current_node.next_node
-        require "pry"; binding.pry
+      while current_node.next_node != nil
+        array << current_node.data
+        current_node = current_node.next_node
       end
-      return string_array
+      array << current_node.data
     end
-    # if !head.next_node.nil? && !head.next_node.next_node.nil?
-    #   head.data + (" #{head.next_node.data} #{head.next_node.next_node.data}")
-    # elsif !head.next_node.nil? && head.next_node.next_node.nil?
-    #   head.data + (" #{head.next_node.data}")
-    # else
-    #   head.data
-    # end
+      array.join(" ")
   end
 
   def prepend(data)
