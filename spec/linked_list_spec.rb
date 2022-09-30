@@ -30,10 +30,15 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("plop suu")
     @list.prepend("dop")
     expect(@list.to_string).to eq("dop plop suu")
+  end
+
+  it "can insert a value at a specific index in the list" do
+    @list.append("plop")
+    @list.append("suu")
+    @list.prepend("dop")
     @list.append("deep")
     expect(@list.to_string).to eq("dop plop suu deep")
-    expect(@list.count).to eq(4)
-    @list.insert(1, "woo")
-    expect(@list.to_string).to eq("dop woo plop suu deep")
+    @list.insert(2, "woo")
+    expect(@list.to_string).to eq("dop plop woo suu deep")
   end
 end

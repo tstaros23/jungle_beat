@@ -66,10 +66,8 @@ class LinkedList
     current_node = @head
 
     (position - 1).times do
-      if current_node.nil?
-        print "List not long enough"
-        current_node = current.next_node
-      end
+        print "List not long enough" if current_node.nil?
+        current_node = current_node.next_node
     end
       new_node = Node.new(data) # new node C
       new_node.next_node = current_node.next_node #C's next is b's next, d
