@@ -34,6 +34,6 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("dop plop suu deep")
     expect(@list.count).to eq(4)
     @list.insert(1, "woo")
-    expect(@list.to_string).to eq("dop woo plop suu")
+    expect(@list.to_string).to eq("dop woo plop suu deep")
   end
 end

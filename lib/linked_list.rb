@@ -60,7 +60,19 @@ class LinkedList
     end
   end
 
-  # def insert(position, data)
-  #
-  # end
+  def insert(position, data)
+    # insert C into 3rd index for example
+    # a -> b -> d -> e
+    current_node = @head
+
+    (position - 1).times do
+      if current_node.nil?
+        print "List not long enough"
+        current_node = current.next_node
+      end
+    end
+      new_node = Node.new(data) # new node C
+      new_node.next_node = current_node.next_node #C's next is b's next, d
+      current_node.next_node = new_node #b's next is C
+  end
 end
