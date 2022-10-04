@@ -73,4 +73,30 @@ class LinkedList
       new_node.next_node = current_node.next_node #C's next is b's next, d
       current_node.next_node = new_node #b's next is C
   end
+
+  def find(position,number)
+    #first we need the list that we want to iterate over and it be converted to a string
+    #need to iterate through the linked list until we find the date at the position on the list
+    # Then we need to count each time we iterate through the list until we get the correct amount of elements
+    #Maybe create a new list when we we find the element and then start counting
+
+    array = []
+    current_node = @head
+    # if current_node.nil?
+    #   puts "List not long enough"
+    #   current_node = current_node.next_node
+    # end
+
+    if self.head.nil?
+      return array
+    else
+      while current_node.next_node != nil
+        array << current_node.data
+        current_node = current_node.next_node
+      end
+      array << current_node.data
+    end
+    new_array = array[position..(position + (number - 1))]
+    new_array.join(" ") if !new_array.empty?
+  end
 end
